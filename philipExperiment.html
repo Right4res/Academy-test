@@ -35,19 +35,34 @@ var updateChart = function (count) {
 			y: yVal
 		});
 		xVal++;
-	}
-	// if (dps.length > dataLength) {
-	// 	dps.shift();
-	// }
-	chart.render();
+    }
+    
+
+
+    
+	if (pauseChart === false) {
+        chart.render();
+        console.log(pauseChart)
+	 }
+     
 };
 updateChart();
 setInterval(function(){updateChart()}, updateInterval);
 }
+
 </script>
 </head>
 <body>
+    <h1>
+        Toggle this button <br>
+        <button id="pauseClick"> Pause/Start </button> works on click <br>
+        <button id="pauseEnter"> Pause/Start </button> works on enter key
+    </h1>
+
+
+
 <div id="chartContainer" style="height: 370px; width:100%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="philipExperiment.js"></script>
 </body>
 </html>
