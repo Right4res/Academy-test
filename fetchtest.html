@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<img src="" id="mascot" />
+	<script>
+		console.log("about to fetch our mascot");
+		async function getdata() {
+			const response = await fetch("test.csv");
+			const data = await response.text();
+			console.log(data);
+			const rows = data.split("\n").slice(1);
+			rows.forEach(item=>{
+				const row = item.split(",")
+				console.log(row)
+			})
+
+		}
+		getdata();
+
+
+
+	</script>
+</body>
+</html>			
