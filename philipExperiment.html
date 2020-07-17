@@ -22,8 +22,8 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		dataPoints: dps
 	}]
 });
-var xVal = 0;
-var yVal = 100;
+let xVal = 0;
+let yVal = 100;
 var updateInterval = 1000;
 // var dataLength = dataLength; // number of dataPoints visible at any point
 var updateChart = function (count) {
@@ -35,6 +35,7 @@ var updateChart = function (count) {
 			y: yVal
 		});
 		xVal++;
+		year = xVal
     }
     
 
@@ -54,14 +55,18 @@ setInterval(function(){updateChart()}, updateInterval);
 </head>
 <body>
     <h1>
-        Toggle this button <br>
-        <button id="pauseClick"> Pause/Start </button> works on click <br>
-        <button id="pauseEnter"> Pause/Start </button> works on enter key
-    </h1>
+		Toggle this button <br>
+	</h1>
+		<p>
+			<button id="pauseClick"> Pause/Start </button> works on click <br>
+			<button id="pauseEnter"> Pause/Start </button> works on enter key
+		</p>
 
-
-
-<div id="chartContainer" style="height: 370px; width:100%;"></div>
+<div id="chartContainer" style="height: 370px; width:75%;"></div>
+	<p>
+		<button id="theYearIs"> What is the year? </button> <br> <br>
+		The year is <b id=year></b>
+	</p>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <script src="philipExperiment.js"></script>
 </body>
