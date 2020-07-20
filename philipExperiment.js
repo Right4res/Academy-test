@@ -35,7 +35,7 @@ function renderChartAfterToggle() {
 function findYear() {
     document.getElementById('yearShow').innerHTML = year;
     console.log(year);
-    sessionStorage.setItem("yearStored", year);
+    // sessionStorage.setItem("yearStored", year);
 } 
 
 // const data = await fetchData();
