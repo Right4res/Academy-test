@@ -23,7 +23,11 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		dataPoints: dps
 	}]
 });
-year = 0;
+year = if (Number(sessionStorage.getItem("yearStored")) > 0) {
+	Number(sessionStorage.getItem("yearStored")
+} else {
+	0
+};
 sessionStorage.setItem("yearStored", year);
 let xVal = Number(sessionStorage.getItem("yearStored"));
 let yVal = 100;
