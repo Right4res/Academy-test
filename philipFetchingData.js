@@ -78,7 +78,4 @@ async function fetchData() {
   });
   return { date, cash, stocks }
 
-
-
-
 }

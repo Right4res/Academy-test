@@ -3,7 +3,7 @@
 <head>
 <script>
 window.onload = function () {
-// const data = await fetchData();
+const dataObject = await fetchData();
 var dps = []; // dataPoints
 var chart = new CanvasJS.Chart("chartContainer", {
 	title :{
@@ -30,15 +30,15 @@ if (Number(sessionStorage.getItem("yearStored")) >= 0) {
 };
 sessionStorage.setItem("yearStored", year);
 let xVal = Number(sessionStorage.getItem("yearStored"));
-let yVal = 100;
+let yVal = dataObject.stocks[0];
 updateInterval = 1000;
 
 
 // var dataLength = dataLength; // number of dataPoints visible at any point
 updateChart = function (count) {
-	count = count || 1;
+	count = year + 1;
 	for (var j = 0; j < count; j++) {
-		yVal = yVal + 3;
+		yVal = dataObject.stocks[j];
 		dps.push({
 			x: xVal,
 			y: yVal

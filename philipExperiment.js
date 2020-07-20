@@ -41,29 +41,24 @@ function findYear() {
 // const data = await fetchData();
 
 async function fetchData() {
-    
-    try {
-        const date = [];
-        const cash = [];
-        const stocks = [];
-    
-        const response = await fetch("data/test.csv");
-        const data = await response.text();
-    
-        // console.log(data)
-    
-        const table = data.split("\n").slice(1); // line break from row 2 to end
-        table.forEach(row => {
-            const column = row.split(',');
-            date.push(column[0]);
-            cash.push(parseFloat(column[1]));
-            stocks.push(parseFloat(column[2]));
-            console.log(date, cash, stocks);
-        });
-        return { date, cash, stocks };
-    } catch (e) {
-        console.error(e);
-    }
+    const date = [];
+    const cash = [];
+    const stocks = [];
+  
+    const response = await fetch("data/test.csv")
+    const data = await response.text()
+  
+    // console.log(data)
+  
+    const table = data.split("\n").slice(1); // line break from row 2 to end
+    table.forEach(row => {
+        const column = row.split(',');
+        date.push(column[0]);
+        cash.push(parseFloat(column[1]));
+        stocks.push(parseFloat(column[2]));
+        console.log(date, cash, stocks);
+    });
+    return { date, cash, stocks }
 }
 
 toggleClick.addEventListener("click", renderChartAfterToggle);
