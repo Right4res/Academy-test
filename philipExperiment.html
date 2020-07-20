@@ -36,7 +36,7 @@ updateInterval = 1000;
 
 // var dataLength = dataLength; // number of dataPoints visible at any point
 updateChart = function (count) {
-	count = year + 1;
+	count = count || 0;
 	for (var j = 0; j < count; j++) {
 		yVal = dataObject.stocks[j];
 		dps.push({
