@@ -23,7 +23,9 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		dataPoints: dps
 	}]
 });
-let xVal = 0;
+let year = 0;
+sessionStorage.setItem("yearStored", year);
+let xVal = Number(sessionStorage.getItem("yearStored"));
 let yVal = 100;
 updateInterval = 1000;
 
