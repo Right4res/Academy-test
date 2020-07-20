@@ -2,7 +2,7 @@
 <html>
 <head>
 <script>
-window.onload = function () {
+window.onload = async function () {
 const dataObject = await fetchData();
 var dps = []; // dataPoints
 var chart = new CanvasJS.Chart("chartContainer", {
