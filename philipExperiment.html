@@ -24,9 +24,11 @@ var chart = new CanvasJS.Chart("chartContainer", {
 });
 let xVal = 0;
 let yVal = 100;
-var updateInterval = 1000;
+updateInterval = 1000;
+
+
 // var dataLength = dataLength; // number of dataPoints visible at any point
-var updateChart = function (count) {
+updateChart = function (count) {
 	count = count || 1;
 	for (var j = 0; j < count; j++) {
 		yVal = yVal +  Math.round(5 + Math.random() *(-5-5));
@@ -34,8 +36,9 @@ var updateChart = function (count) {
 			x: xVal,
 			y: yVal
 		});
+		year = xVal;
 		xVal++;
-		year = xVal
+		
     }
     
 
@@ -43,13 +46,14 @@ var updateChart = function (count) {
     
 	if (pauseChart === false) {
         chart.render();
-        console.log(pauseChart)
-	 }
+        }
      
 };
 updateChart();
-setInterval(function(){updateChart()}, updateInterval);
+idSetInterval = setInterval(function(){updateChart()}, updateInterval);
+idSetIntervalShowYear = setInterval(function(){findYear()}, updateInterval);
 }
+
 
 </script>
 </head>
@@ -59,13 +63,14 @@ setInterval(function(){updateChart()}, updateInterval);
 	</h1>
 		<p>
 			<button id="pauseClick"> Pause/Start </button> works on click <br>
-			<button id="pauseEnter"> Pause/Start </button> works on enter key
+			<button id="pauseEnter"> Pause/Start </button> works on enter key or space bar
 		</p>
 
 <div id="chartContainer" style="height: 370px; width:75%;"></div>
 	<p>
-		<button id="theYearIs"> What is the year? </button> <br> <br>
-		The year is <b id=year></b>
+		<!-- <button id="theYearIs"> What is the year? </button> <br> <br> -->
+		The year is <b id=yearShow></b>
+		<a href="philipExperimentYearIs.html"> The year is</a>
 	</p>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <script src="philipExperiment.js"></script>
