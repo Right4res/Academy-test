@@ -3,6 +3,7 @@
 <head>
 <script>
 window.onload = function () {
+// const data = await fetchData();
 var dps = []; // dataPoints
 var chart = new CanvasJS.Chart("chartContainer", {
 	title :{
@@ -31,7 +32,7 @@ updateInterval = 1000;
 updateChart = function (count) {
 	count = count || 1;
 	for (var j = 0; j < count; j++) {
-		yVal = yVal +  Math.round(5 + Math.random() *(-5-5));
+		yVal = yVal + 3;
 		dps.push({
 			x: xVal,
 			y: yVal
@@ -42,8 +43,6 @@ updateChart = function (count) {
     }
     
 
-
-    
 	if (pauseChart === false) {
         chart.render();
         }
