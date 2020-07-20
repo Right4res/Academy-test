@@ -23,15 +23,15 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		dataPoints: dps
 	}]
 });
-// if (Number(sessionStorage.getItem("yearStored")) >= 0) {
-// 	year = Number(sessionStorage.getItem("yearStored"));
-// } else {
-// 	year = 0;
-// };
-// sessionStorage.setItem("yearStored", year);
-// let xVal = Number(sessionStorage.getItem("yearStored"));
-year = 0
-let xVal = 0
+if (Number(sessionStorage.getItem("yearStored")) >= 0) {
+	year = Number(sessionStorage.getItem("yearStored"));
+} else {
+	year = 0;
+};
+sessionStorage.setItem("yearStored", year);
+let xVal = Number(sessionStorage.getItem("yearStored"));
+// year = 0
+// let xVal = 0
 let yVal = dataObject.stocks[0];
 updateInterval = 1000;
 
@@ -39,19 +39,18 @@ updateInterval = 1000;
 // var dataLength = dataLength; // number of dataPoints visible at any point
 updateChart = function (count) {
 	count = count || 1;
-	for (var j = 0; j < count; j++) {
-		yVal = dataObject.stocks[j];
+	
+		yVal = dataObject.stocks[year];
 		dps.push({
 			x: xVal,
 			y: yVal
 		});
-		console.log(dataObject.stocks[j]);
-		console.log(count);
+
 		console.log(yVal);
-		year = xVal;
 		xVal++;
+		year = xVal;
 		
-    }
+    
     
 
 	if (pauseChart === false) {

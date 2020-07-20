@@ -33,12 +33,11 @@ function renderChartAfterToggle() {
 }
 
 function findYear() {
-    document.getElementById('yearShow').innerHTML = year;
+    document.getElementById('yearShow').innerHTML = year-1;
     console.log(year);
-    // sessionStorage.setItem("yearStored", year);
+    sessionStorage.setItem("yearStored", year);
 } 
 
-// const data = await fetchData();
 
 async function fetchData() {
     const date = [];
@@ -47,8 +46,6 @@ async function fetchData() {
   
     const response = await fetch("data/test.csv")
     const data = await response.text()
-  
-    // console.log(data)
   
     const table = data.split("\n").slice(1); // line break from row 2 to end
     table.forEach(row => {
