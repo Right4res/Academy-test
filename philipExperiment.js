@@ -33,7 +33,7 @@ function renderChartAfterToggle() {
 }
 
 function findYear() {
-    document.getElementById('yearShow').innerHTML = year-1;
+    document.getElementById('yearShow').innerHTML = year;
     console.log(year);
     sessionStorage.setItem("yearStored", year);
 } 
